@@ -5,3 +5,9 @@ __pycache__/
 *.aeskey.bin
 *.vcf
 data/
+remix-web3-examples/
+node_modules/
+*.pem
+*.log
+.states/
+.deps/

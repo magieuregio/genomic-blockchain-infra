@@ -12,7 +12,7 @@ def canonical(kmer):
 
 def kmer_vocab(k=5):
     bases = 'ACGT'
-    return sorted({canonical(''.join(p)) for p in product(bases, repeat=k)})
+    return [''.join(p) for p in product(bases, repeat=k)]
 
 def kmer_counts(seq, k=5):
     seq = seq.upper()
@@ -24,8 +24,7 @@ def kmer_counts(seq, k=5):
         kmer = seq[i:i+k]
         if all(c in bases for c in kmer):
             n_valid += 1
-            ck = canonical(kmer)
-            counts[ck] = counts.get(ck, 0) + 1
+            counts[kmer] = counts.get(kmer, 0) + 1
         else:
             n_n += 1
     return counts, n_valid, n_n
@@ -35,7 +34,7 @@ VOCAB = kmer_vocab(5)
 for fasta in sorted(glob.glob("data/HG*.fa")):
     for rec in SeqIO.parse(fasta, "fasta"):
         counts, n_valid, n_n = kmer_counts(str(rec.seq), k=5)
-        vec = np.zeros(len(VOCAB), dtype=np.float32)
+        vec = np.zeros(len(VOCAB), dtype=np.float64)
         idx = {k:i for i,k in enumerate(VOCAB)}
         for kmer, count in counts.items():
             vec[idx[kmer]] = count

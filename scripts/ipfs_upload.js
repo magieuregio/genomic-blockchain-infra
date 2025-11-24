@@ -2,7 +2,6 @@ const { create } = require('ipfs-http-client');
 const fs = require('fs');
 const path = require('path');
 
-// Connect to Infura or local IPFS node
 const ipfs = create({ url: 'https://ipfs.infura.io:5001/api/v0' });
 
 
@@ -21,7 +20,6 @@ async function uploadFolder(folder) {
     }
 }
 
-// Usage: node scripts/ipfs_upload.js metadata
 if (require.main === module) {
     const folder = process.argv[2];
     if (!folder) {

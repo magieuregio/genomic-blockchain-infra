@@ -1,14 +1,12 @@
 const { ethers } = require("ethers");
 const fs = require("fs");
 
-// --- CONFIG ---
 require('dotenv').config();
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
 const AMOY_RPC = process.env.AMOY_RPC;
 const CONTRACT_ADDRESS = process.env.CONTRACT_ADDRESS;
 const ABI = JSON.parse(fs.readFileSync("./abis/GenomicDataNFTv2.json"));
 
-// Load all metadata CIDs (replace with your own array or load from JSON)
 const metadataURIs = [
   "ipfs://QmeCUNoVsTt3ahobF1tEEETixQHZRrjeqSK2FWbTF7SRnz",
   "ipfs://QmWJNmVv3j6udNqFV6zTVd2fMviN3KodTpppPmY1FKTcMc",
@@ -23,7 +21,6 @@ const metadataURIs = [
 ];
 const magPrice = ethers.parseUnits("50", 18); // 50 MAG, 18 decimals
 
-// --- SCRIPT ---
 
 async function main() {
   const provider = new ethers.JsonRpcProvider(AMOY_RPC);

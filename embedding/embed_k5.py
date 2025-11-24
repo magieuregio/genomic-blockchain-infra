@@ -1,4 +1,3 @@
-# embed_k5.py
 from Bio import SeqIO
 import numpy as np, json, glob, hashlib
 from itertools import product

@@ -9,7 +9,7 @@ KEK_PUB_PEM = "/home/bioinfo/SARA_FEIZYAB/blockchain/encryption/kek_public.pem"
 projectId = "MAG-2025-LYM-01"
 consentHash = "0xcd478b4633066ff3b0681ea586da81381fd097ae25ed6aee1259e8ce13e93b5b" 
 
-for idx, npy in enumerate(sorted(glob.glob("data/HG*_variant_embed.npy"))):
+for idx, npy in enumerate(sorted(glob.glob("data/HG*_k5_embed.npy"))):
     tokenId = str(idx)
     AAD = f"{projectId}|{tokenId}|{consentHash}".encode()
     

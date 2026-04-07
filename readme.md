@@ -11,7 +11,7 @@
 This repository presents a prototype for a secure, scalable infrastructure enabling **controlled access to genomic data** using blockchain and decentralized storage.
 
 - **Vectorized genomic data** (privacy-preserving k-mer embeddings)
-- **Encrypted, off-chain storage** (IPFS, pinning via Pinata/Web3.Storage)
+- **Encrypted, off-chain storage** (IPFS, pinning via third-party IPFS pinning providers or self-hosted nodes)
 - **Multi-NFT access control** (ERC-1155 on Polygon L2)
 - **MAG utility token** (ERC-20, testnet faucet)
 - **Consent compliance** (off-chain, proof on-chain)
